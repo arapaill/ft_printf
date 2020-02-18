@@ -6,7 +6,7 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 09:58:36 by arapaill          #+#    #+#             */
-/*   Updated: 2020/02/14 09:35:29 by arapaill         ###   ########.fr       */
+/*   Updated: 2020/02/18 14:24:57 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char			*ft_itoabase(unsigned long long nb, int base)
 		nb /= base;
 		i++;
 	}
+	array[i] = '\0';
 	i--;
 	while (i > j)
 	{
