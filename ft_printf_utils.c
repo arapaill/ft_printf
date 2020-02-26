@@ -6,7 +6,7 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 09:58:36 by arapaill          #+#    #+#             */
-/*   Updated: 2020/02/18 14:24:57 by arapaill         ###   ########.fr       */
+/*   Updated: 2020/02/26 14:00:59 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ char			*ft_itoabase(unsigned long long nb, int base)
 		return (if_zero());
 	if (!(array = malloc(sizeof(char *) * count_digit(nb, base) + 1)))
 		return (NULL);
+	array[count_digit(nb, base) + 1] = '\0';
 	while (nb > 0)
 	{
 		array[i] = "0123456789abcdef"[nb % base];
 		nb /= base;
 		i++;
 	}
-	array[i] = '\0';
 	i--;
 	while (i > j)
 	{
@@ -109,7 +109,10 @@ int				spamotron(char c, int size)
 	int i;
 
 	i = 0;
-	while (i++ < size)
+	while (i < size)
+	{
 		write(1, &c, 1);
+		i++;
+	}
 	return (i);
 }

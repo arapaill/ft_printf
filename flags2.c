@@ -6,7 +6,7 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:53:11 by arapaill          #+#    #+#             */
-/*   Updated: 2020/02/18 12:11:29 by arapaill         ###   ########.fr       */
+/*   Updated: 2020/02/24 17:07:57 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,21 @@ t_format	zero_setting(const char *s, t_format arg_list, va_list arg)
 	int		i;
 
 	i = 0;
-		while (s[i] != '0')
+	while (s[i] != '0')
 		i++;
 	while (s[i] == '0')
 		i++;
 	if (ft_isdigit(s[i]))
 		arg_list.min_field = ft_atoi(&s[i]);
-	else if(s[i] == '*')
+	else if (s[i] == '*')
 	{
 		arg_list.min_field = va_arg(arg, int);
 		if (arg_list.min_field < 0)
-			arg_list.min_field += FLAG_MINUS;
-			arg_list.min_field += FLAG_ZERO;
+		{
+			arg_list.flags += FLAG_MINUS;
+			arg_list.flags -= FLAG_ZERO;
 			arg_list.min_field *= -1;
+		}
 	}
 	return (arg_list);
 }

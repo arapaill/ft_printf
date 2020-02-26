@@ -6,7 +6,7 @@
 #    By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 15:00:08 by arapaill          #+#    #+#              #
-#    Updated: 2020/02/18 15:54:39 by arapaill         ###   ########.fr        #
+#    Updated: 2020/02/26 14:23:39 by arapaill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ NAME = libftprintf.a
 SRCS = printf_arg1.c ft_printf.c ft_printf_utils.c flags.c flags2.c
 FLAGS = -Wall -Werror -Wextra
 LIB = ar rcs
+CC = @gcc
 OBJ         =   $(SRCS:.c=.o)
 all: $(NAME)
 $(NAME):    $(OBJ)
@@ -29,3 +30,7 @@ fclean: clean
 	@rm -f $(NAME)
 	@make fclean -C ./libft
 re: fclean all
+
+exec:	re
+		@gcc ${FLAGS} ${NAME} main.c
+		@./a.out

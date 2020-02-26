@@ -6,7 +6,7 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 14:14:56 by arapaill          #+#    #+#             */
-/*   Updated: 2020/02/18 15:44:17 by arapaill         ###   ########.fr       */
+/*   Updated: 2020/02/20 13:23:38 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int			spamotron(char c, int size);
 */
 int			case_c(int c, t_format arg_list);
 int			case_s(char *s, t_format arg_list);
-int			case_p(void *p, t_format arg_list);
+int			case_p(long long unsigned p, t_format arg_list);
 int			case_d(int nb, t_format arg_list);
 int			case_u(unsigned long long nb, t_format arg_list);
 int			case_x(unsigned long long nb, char c, t_format arg_list);
