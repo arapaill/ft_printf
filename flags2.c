@@ -6,7 +6,7 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 10:53:11 by arapaill          #+#    #+#             */
-/*   Updated: 2020/02/24 17:07:57 by arapaill         ###   ########.fr       */
+/*   Updated: 2020/03/04 16:56:46 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ t_format	minus_setting(const char *s, t_format arg_list, va_list arg)
 		i++;
 	if (ft_isdigit(s[i]))
 		arg_list.min_field = ft_atoi(&s[i]);
-	else if(s[i] == '*')
+	else if (s[i] == '*')
 	{
 		arg_list.min_field = va_arg(arg, int);
-			if (arg_list.min_field < 0)
-				arg_list.min_field *= -1;
+		if (arg_list.min_field < 0)
+			arg_list.min_field *= -1;
 	}
 	return (arg_list);
 }
@@ -69,7 +69,7 @@ t_format	digit_setting(const char *s, t_format arg_list, va_list arg)
 	}
 	while (!(ft_isdigit(s[i])) && s[i] != '*')
 		i++;
-	if (s[i] == '*')	
+	if (s[i] == '*')
 	{
 		arg_list.min_field = va_arg(arg, int);
 		if (arg_list.min_field < 0)
@@ -81,7 +81,7 @@ t_format	digit_setting(const char *s, t_format arg_list, va_list arg)
 	}
 	else
 		arg_list.min_field = ft_atoi(&s[i]);
-	return(arg_list);
+	return (arg_list);
 }
 
 t_format	dot_setting(const char *s, t_format arg_list, va_list arg)

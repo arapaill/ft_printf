@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 12:53:11 by arapaill          #+#    #+#             */
-/*   Updated: 2020/03/10 11:31:49 by arapaill         ###   ########.fr       */
+/*   Created: 2020/03/09 12:09:40 by arapaill          #+#    #+#             */
+/*   Updated: 2020/03/09 12:11:08 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+int				is_arg(char c)
 {
-	int	i;
-	int	j;
+	int i;
 
 	i = 0;
-	j = 0;
-	printf("----printf----\n");
-	i = printf("'%p'\n", &i);
-	printf("---ft_printf--\n");
-	j = ft_printf("this %i number \n", 17);
-	printf("size printf : %i, size ft_printf : %i\n", i, j);
+	if (c == 'c' || c == 's' || c == 'd'
+	|| c == 'i' || c == 'u' || c == 'x' || c == 'X' || c == '%' || c == 'p')
+		return (1);
 	return (0);
+}
+
+int				spamotron(char c, int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		write(1, &c, 1);
+		i++;
+	}
+	return (i);
 }

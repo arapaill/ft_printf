@@ -6,7 +6,7 @@
 /*   By: arapaill <arapaill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 14:30:53 by arapaill          #+#    #+#             */
-/*   Updated: 2020/02/26 10:44:57 by arapaill         ###   ########.fr       */
+/*   Updated: 2020/03/10 09:58:18 by arapaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ t_format		flags_ini(t_format *arg_list)
 	return (*arg_list);
 }
 
-t_format	flags_presetting(const char *s, t_format arg_list, va_list arg)
+t_format		flags_presetting(const char *s, t_format arg_list, va_list arg)
 {
-	//printf("\nPRESETTING\n");
 	if (arg_list.flags & FLAG_MINUS)
 		arg_list = minus_setting(s, arg_list, arg);
 	if (arg_list.flags & FLAG_ZERO)
